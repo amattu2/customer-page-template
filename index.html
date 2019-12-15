@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>Customer Page Design</title>
+		<link rel="stylesheet" type="text/css" href="index.css" />
+		<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+	</head>
+	<body>
+		<!-- Customer Info (Left) -->
+		<div class='customer-info-container'>
+			<div class='info-item customer-info'>
+				<div class='header'>
+					<div class='user-image'>
+						<div class='account-type'><i class="fa fa-user"></i></div>
+					</div>
+				</div>
+				<div class='customer-name'>
+					<p class='customer-name-plate'></p>
+				</div>
+			</div>
+
+			<div class='info-item contact-info'>
+				<div class='title'>
+					Contact Numbers
+				</div>
+				<div class='contact-item'>
+					<div class='item-logo'>
+						<i class="fa fa-mobile" aria-hidden="true"></i>
+					</div>
+					<div class='contact-type'>Cell</div>
+					<div class='contact-number'>
+						<p>(XXX) XXX-XXXX</p>
+					</div>
+				</div>
+				<div class='contact-item'>
+					<div class='item-logo'>
+						<i class="fa fa-home" aria-hidden="true"></i>
+					</div>
+					<div class='contact-type'>Home</div>
+					<div class='contact-number'>
+						<p>(XXX) XXX-XXXX</p>
+					</div>
+				</div>
+				<div class='contact-item'>
+					<div class='item-logo'>
+						<i class="fa fa-briefcase" aria-hidden="true"></i>
+					</div>
+					<div class='contact-type'>Work</div>
+					<div class='contact-number'>
+						<p>(XXX) XXX-XXXX</p>
+					</div>
+				</div>
+				<div class='contact-item'>
+					<div class='item-logo'>
+						<i class="fa fa-fax" aria-hidden="true"></i>
+					</div>
+					<div class='contact-type'>Fax</div>
+					<div class='contact-number'>
+						<p>(XXX) XXX-XXXX</p>
+					</div>
+				</div>
+			</div>
+
+			<div class='info-item system-notes' style='opacity: 0'>
+				<div class='title'>
+					System Notes
+				</div>
+				<div class='body'></div>
+			</div>
+		</div>
+
+		<!-- Customer Info (Right) -->
+		<div class='customer-items'>
+			<div class='about-section'>
+				<div class='header'>
+					<div class='title'>
+						<div class='account-type'><i class="fa fa-user"></i></div>
+						<p>About</p>
+					</div>
+					<div class='button'>
+						<div class='standardBtn black' id='invoice-customer'><i class="fa fa-file" style='padding-right: 5px'></i> Invoice</div>
+						<div class='standardBtn black' id='book-customer'><i class="fa fa-calendar-plus-o" style='padding-right: 5px'></i> Book</div>
+						<div class='standardBtn orange' id='edit-user'><i class="fa fa-pencil" style='padding-right: 5px'></i> Edit</div>
+					</div>
+				</div>
+
+				<div class='info-grid'>
+					<div class='grid-lead'>Name:</div>
+					<div class='customer-name'><p class='customer-name-plate'></p></div>
+
+					<div class='grid-lead business-contact1'>Contact:</div>
+					<div class='business-contact2'><p></p></div>
+
+					<div class='grid-lead'>Email #1:</div>
+					<div><p id='email-1'></p></div>
+
+					<div><!-- space between --></div>
+
+					<div class='grid-lead'>Email #2:</div>
+					<div><p id='email-2'></p></div>
+
+						<div><!-- end of line --></div>
+
+					<div class='grid-lead'>Street:</div>
+					<div><p id='street-address'></p></div>
+
+					<div><!-- space between --></div>
+
+					<div class='grid-lead'>City:</div>
+					<div><p id='city-address'></p></div>
+
+						<div><!-- end of line --></div>
+
+					<div class='grid-lead'>State:</div>
+					<div><p id='state-address'></p></div>
+
+					<div><!-- space between --></div>
+
+					<div class='grid-lead'>Zip:</div>
+					<div><p id='zip-address'></p></div>
+
+						<div><!-- end of line --></div>
+				</div>
+				<div class='customer-last-update'>Last Update: Never</div>
+			</div>
+
+			<div class='data-section'>
+				<div class='left'>
+					<div class="info-item vehicles">
+						<div class="title">
+							<span style='line-height: 30px'>Vehicles</span>
+							<div class='standardBtn black' id='add-vehicle' style='position: absolute; right: 10px'><i class="fa fa-car" style='padding-right: 5px;'></i> Vehicle</div>
+						</div>
+						<div class="body">
+							<table class="material-table">
+								<tbody class='white-table' id="vehicle-list"><tr><td><p class="noData">Nothing to display</p></td></tr></tbody>
+							</table>
+						</div>
+					</div>
+					<div class="info-item activity">
+						<div class="title">
+							Activity
+						</div>
+						<div class="body">
+							<table class="material-table">
+								<tbody class='white-table'><tr><td><p class="noData">Nothing to display</p></td></tr></tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+
+				<div class='right'>
+					<div class='info-item private-notes'>
+						<div class='title'>
+							Private Notes
+						</div>
+						<div class='body'><p class="noData">Nothing to display</p></div>
+					</div>
+					<div class='info-item account-rating' title='Based on customer statistics'>
+						<div class='title'>
+							Account Rating
+						</div>
+						<div class='body'>
+							<p class="noData">Nothing to display</p>
+						</div>
+					</div>
+					<div class="info-item" id='map-div' style='display: none'>
+						<div class="title">
+							<span>Map</span>
+						</div>
+						<div class="body">
+							<div id='map' style='width: 100%; height: 150px'></div>
+						</div>
+					</div>
+					<div class='info-item activity-log'>
+						<div class='title'>
+							Activity Log
+						</div>
+						<div class='body nd'>
+							<p class="noData">Nothing to display</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Edit Popup -->
+			<div class='edit-customer popup-div'>
+				<div class='input-case with-overflow'>
+					<div class='label' id='CusFirstNameLabel'>First Name</div>
+					<input type='text' class='bootstrap' id='CusFirstName' placeholder='First Name' maxlength='25'/>
+
+					<div class='label' id='CusLastNameLabel'>Last Name</div>
+					<input type='text' class='bootstrap' id='CusLastName' placeholder='Last Name' maxlength='35' disabled/>
+					<div class='inputUnlock' id='lastNameUnlock'>Unlock</div>
+
+					<div class='label'>Email #1</div>
+					<input type='text' class='bootstrap' id='CusEmail_H' placeholder='Email Address #1' maxlength='255'/>
+
+					<div class='label'>Email #2</div>
+					<input type='text' class='bootstrap' id='CusEmail_W' placeholder='Email Address #2' maxlength='255'/>
+
+					<div class='label'>Cell</div>
+					<input type='text' class='bootstrap' id='CusCell' placeholder='Cell Phone #' maxlength='14'/>
+
+					<div class='label'>Home</div>
+					<input type='text' class='bootstrap' id='CusHome' placeholder='Home Phone #' maxlength='14'/>
+
+					<div class='label'>Work</div>
+					<input type='text' class='bootstrap' id='CusWork' placeholder='Work Phone #' maxlength='14'/>
+
+					<div class='label'>Fax</div>
+					<input type='text' class='bootstrap' id='CusFax' placeholder='Fax #' maxlength='14'/>
+
+					<div class='label'>Street Address</div>
+					<input type='text' class='bootstrap' id='CusStreet1' placeholder='Street Address' maxlength='95'/>
+
+					<div class='label'>City</div>
+					<input type='text' class='bootstrap' id='CusCity' placeholder='City' maxlength='35'/>
+
+					<div class='label'>State</div>
+					<input type='text' class='bootstrap' id='CusState' placeholder='State' maxlength='2' />
+
+					<div class='label'>Zip</div>
+					<input type='text' class='bootstrap' id='CusZip' placeholder='Zip Code' maxlength='7' />
+
+					<div class='label'>Private Notes</div>
+					<textarea class="bootstrap" rows="5" style='resize: vertical' id="CusNotes" maxlength='1024' placeholder='Private Account Notes'></textarea>
+
+					<div class='label'>Account Type</div>
+					<select class='bootstrap' id='CusCompany'>
+						<option value='true'>Business</option>
+						<option value='false'>Individual</option>
+					</select>
+
+					<div class='label'>Tax Exempt</div>
+					<select class='bootstrap' id='CusNonTaxable'>
+						<option value='true'>Yes</option>
+						<option value='false'>No</option>
+					</select>
+
+					<div class='account-options'>
+						<!-- Merge Option -->
+						<div class='option' id='merge-account'>Merge Account</div>
+						<!-- Delete Option -->
+						<div class='option red' id='delete-account' style='margin-left: auto'>Delete Account</div>
+					</div>
+				</div>
+
+				<div class='bottom-case'>
+					<div class="standardBtn black" id="generatePDF" style="margin-right: auto">PDF Form</div>
+					<div class='standardBtn red' id='cancel'>Cancel</div>
+					<div class='standardBtn green' id='save'>Save</div>
+				</div>
+			</div>
+			<div class='add-vehicle popup-div'>
+				<div class='input-case'>
+					<div class='label'>Vehicle Identification #</div>
+					<input type='text' class='bootstrap' id='vin' placeholder='VIN' maxlength='17' />
+
+					<div class='label'>Vehicle Year</div>
+					<input type='number' class='bootstrap' id='year' placeholder='Year' maxlength='4' value='2018' step='1' min='1900' />
+
+					<div class='label'>Vehicle Make</div>
+					<input type='text' class='bootstrap' id='make' placeholder='Make' maxlength='26' />
+					<div class='inputUnlock' id='vehicleLookupBtn'>Lookup</div>
+
+					<div class='label'>Vehicle Model</div>
+					<input type='text' class='bootstrap' id='model' placeholder='Model' maxlength='26' />
+
+					<div class='label'>Vehicle Engine</div>
+					<input type='text' class='bootstrap' id='engine' placeholder='Engine (eg. 3.0L Twin-Turbo N54B30)' maxlength='37' />
+
+					<div class='label'>Vehicle Tag</div>
+					<input type='text' class='bootstrap' id='tag' placeholder='Tag' value='TEMP' maxlength='20' />
+				</div>
+
+				<div class='bottom-case'>
+					<div class='standardBtn red' id='cancel'>Cancel</div>
+					<div class='standardBtn green disabled' id='add'>Add</div>
+				</div>
+			</div>
+			<div class='book-customer popup-div'>
+				<div class='input-case'>
+					<div class='label'>Select A Vehicle</div>
+					<select class='bootstrap'>
+						<option></option>
+					</select>
+				</div>
+				<div class='bottom-case'>
+					<div class='standardBtn red' id='cancel'>Cancel</div>
+					<div class='standardBtn green' id='add'>Book</div>
+				</div>
+			</div>
+			<div class='invoice-customer popup-div'>
+				<div class='input-case'>
+					<div class='label'>Select A Vehicle</div>
+					<select class='bootstrap'>
+						<option></option>
+					</select>
+				</div>
+				<div class='bottom-case'>
+					<div class='standardBtn red' id='cancel'>Cancel</div>
+					<div class='standardBtn green' id='add'>Invoice</div>
+				</div>
+			</div>
+			<div class='show-vehicle popup-div'>
+				<div style='height: calc(100%);overflow-y: auto;position: relative;'>
+					<div class='left'>
+						<div class="box mileageServices">
+							<div class="title">
+								<span>Recommended Services</span>
+								<div class='icon'>*Mileage Based</div>
+							</div>
+
+							<div class="body"></div>
+						</div>
+						<div class="box recentNotes">
+							<div class="title">
+								<span>Recent Notes</span>
+							</div>
+
+							<div class="body"></div>
+						</div>
+						<div class="box">
+							<div class="title">
+								<span>Service History</span>
+							</div>
+
+							<div class="body" style='padding: 0;overflow-x: hidden;'>
+								<table class="material-table">
+									<tbody class='white-table' id='customer-vehicle-table'></tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+
+					<div class='right'>
+						<div class="box vehicleYMM">
+							<div class="title">
+								<span>Vehicle</span>
+							</div>
+							<div class="body"></div>
+						</div>
+						<div class="box mileage">
+							<div class="title">
+								<span>Mileage</span>
+							</div>
+							<div class="body"></div>
+						</div>
+						<div class="box vin">
+							<div class="title">
+								<span>VIN</span>
+								<div class="icon" id="copyVINBtn" style="right: 28px;height: 11px;"><i class="fa fa-copy"></i></div>
+								<div class='icon' id='editVINBtn'><i class="fa fa-pencil"></i></div>
+							</div>
+							<div class="body"></div>
+						</div>
+						<div class="box tag">
+							<div class="title">
+								<span>Tag Number</span>
+								<div class='icon' id='editTagBtn'><i class="fa fa-pencil"></i></div>
+							</div>
+							<div class="body"></div>
+						</div>
+						<div class="box truck">
+							<div class="title">
+								<span>Truck</span>
+								<div class='icon' id='editTruckBtn'><i class="fa fa-pencil"></i></div>
+							</div>
+							<div class="body"></div>
+						</div>
+						<div class="box engine">
+							<div class="title">
+								<span>Engine</span>
+							</div>
+							<div class="body"></div>
+						</div>
+						<div class="box tiresize">
+							<div class="title">
+								<span>Tire Sizes</span>
+								<div class='icon' id='editTireBtn'><i class="fa fa-pencil"></i></div>
+							</div>
+							<div class="body"></div>
+						</div>
+					</div>
+				</div>
+
+				<div class='bottom-case' style='height: 25px; background: rgba(0,0,0,0)'>
+					<div class='standardBtn black' id='reassign'>Reassign</div>
+					<div class='standardBtn' id='hide'>Hide</div>
+				</div>
+			</div>
+			<div class='merge-customer popup-div' style='overflow-x: hidden'>
+				<div class='input-case group-1'>
+					<div class='label'>Customer Search</div>
+					<input type='text' class='bootstrap' style='border-radius: 3px 3px 0 0;border-bottom: unset;' placeholder='Search for a customer'/>
+					<select class='bootstrap' style='border-radius: 0 0 3px 3px;border-top: unset;padding: 2px 12px;box-sizing: content-box'></select>
+				</div>
+
+				<div class='input-case group-2 with-overflow' style='display: none'>
+					<div class='label'>First Name</div>
+					<select class='bootstrap' id='merge-first-name'></select>
+
+					<div class='label'>Last Name</div>
+					<select class='bootstrap' id='merge-last-name'></select>
+
+					<div class='label'>Email #1</div>
+					<select class='bootstrap' id='merge-email-1'></select>
+
+					<div class='label'>Email #2</div>
+					<select class='bootstrap' id='merge-email-2'></select>
+
+					<div class='label'>Cell Phone</div>
+					<select class='bootstrap' id='merge-cell'></select>
+
+					<div class='label'>Home Phone</div>
+					<select class='bootstrap' id='merge-home'></select>
+
+					<div class='label'>Work Phone</div>
+					<select class='bootstrap' id='merge-work'></select>
+
+					<div class='label'>Fax Number</div>
+					<select class='bootstrap' id='merge-fax'></select>
+
+					<div class='label'>Street Address</div>
+					<select class='bootstrap' id='merge-street-1'></select>
+
+					<div class='label'>City</div>
+					<select class='bootstrap' id='merge-city'></select>
+
+					<div class='label'>State</div>
+					<select class='bootstrap' id='merge-state'></select>
+
+					<div class='label'>Zip</div>
+					<select class='bootstrap' id='merge-zip'></select>
+				</div>
+
+				<div class='bottom-case'>
+					<div class='standardBtn red' id='cancel'>Cancel</div>
+					<div class='standardBtn disabled' id='continue'>Continue</div>
+				</div>
+			</div>
+			<div class='email-customer popup-div'>
+				<div class='input-case'>
+					<div class='label'>Email Address</div>
+					<select class='bootstrap' id='email-address' style='box-sizing: content-box; margin-bottom: 20px;'></select>
+
+					<div class='label'>Subject</div>
+					<input type='text' class='bootstrap' id='email-subject' placeholder='Email Subject' style='margin-bottom: 20px;' maxlength='25' />
+
+					<div class='label'>Message</div>
+					<textarea class="bootstrap" rows="5" style='resize: vertical;height: unset;font-family:inherit' id="email-message" maxlength='500' placeholder='Email Message'></textarea>
+
+					<p class='note'>* The email automatically includes your initials and company contact info.</p>
+				</div>
+
+				<div class='bottom-case'>
+					<div class='standardBtn red' id='cancel'>Cancel</div>
+					<div class='standardBtn green disabled' id='send'>Send</div>
+				</div>
+			</div>
+			<div class='delete-account popup-div'>
+				<div class='input-case'>
+					<div class='label'>Account delete confirmation</div>
+					<input type='text' class='bootstrap' id='delete-confirmation' placeholder='Type "delete" to confirm' />
+				</div>
+
+				<div class='bottom-case'>
+					<div class='standardBtn red' id='cancel'>Cancel</div>
+					<div class='standardBtn disabled' id='delete'>Delete</div>
+				</div>
+			</div>
+			<div class='edit-tires popup-div'>
+				<div class='input-case'>
+					<div class='label'>Front Tires</div>
+					<input type='text' class='bootstrap' id='front-tire-size' placeholder='225/35/18' maxlength='9' />
+
+					<div class='label'>Rear Tires</div>
+					<input type='text' class='bootstrap' id='rear-tire-size' placeholder='255/35/18' maxlength='9' />
+				</div>
+
+				<div class='bottom-case'>
+					<div class='standardBtn red' id='cancel'>Cancel</div>
+					<div class='standardBtn disabled' id='save'>Save</div>
+				</div>
+			</div>
+			<div class='reassign-vehicle popup-div'>
+				<div class='input-case'>
+					<div class='label'>Customer Search</div>
+					<input type='text' class='bootstrap' style='border-radius: 3px 3px 0 0;border-bottom: unset;' placeholder='Search for a customer'/>
+					<select class='bootstrap' style='border-radius: 0 0 3px 3px;border-top: unset;padding: 2px 12px;box-sizing: content-box'></select>
+				</div>
+
+				<div class='bottom-case'>
+					<div class='standardBtn red' id='cancel'>Cancel</div>
+					<div class='standardBtn green disabled' id='reassign'>Reassign</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
